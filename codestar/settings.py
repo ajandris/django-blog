@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
-# importing default environment variables 9security feature)
+# importing default environment variables (security feature)
 try:
     import env
 except ImportError:
@@ -138,3 +138,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# admin site trusted domains
+CSRF_TRUSTED_ORIGINS = [
+    "*",
+]
