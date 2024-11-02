@@ -141,5 +141,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # admin site trusted domains
 CSRF_TRUSTED_ORIGINS = [
-    "*",
+    "http://localhost:8000",
 ]

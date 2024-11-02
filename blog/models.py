@@ -16,3 +16,11 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0, verbose_name='Post Status')
 
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='Post')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Author')
+    body = models.TextField(verbose_name='Comment')
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False, verbose_name='Approved')
+    
